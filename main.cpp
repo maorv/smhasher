@@ -115,6 +115,7 @@ HashInfo g_hashes[] =
     { 0xb13dea7c9c324e51ULL, 0x75f17d6b3588f843ULL } },
 #endif
   { crc32,                32, 0x3719DB20, "crc32",       "CRC-32 soft", POOR, {} },
+  { crc32c_simd,          32, 0x3719DB20, "crc32c_simd", "CRC-32 Intel simd", POOR, {} },
   { md5_128,             128, 0xF263F96F, "md5-128",     "MD5", GOOD, {} },
   { md5_32,               32, 0x634E5AEC, "md5_32a",     "MD5, low 32 bits", POOR, {0x265cab52} /* !! */},
 #ifdef _MSC_VER /* truncated long to 32 */

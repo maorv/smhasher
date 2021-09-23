@@ -1281,6 +1281,14 @@ inline void pearson256_test ( const void * key, int len, uint32_t seed, void * o
 }
 #endif
 }
+
+#if defined(HAVE_SSE42) && defined(__x86_64__)
+
+#include "crc32c/logging/crc32c.h"
+inline void crc32c_simd (const void * key, int len, uint32_t seed, void * out ) { 
+  *(uint32_t*)out = (uint32_t) logging::crc32cIntelC (seed, key, (size_t)len);
+}
+#endif
 #endif
 
 
